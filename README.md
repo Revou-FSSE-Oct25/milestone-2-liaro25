@@ -79,12 +79,31 @@ This gives the game a fun, real, and authentic Japanese playground atmosphere.
 
 ## Technologies Used
 
-- **HTML5** — Page structure
-- **TailwindCSS** — Layout & styling using Tailwind
-- **JavaScript (Vanilla JS)** — Game logic, DOM manipulation, event handling
+| Technology                  | Description                                     |
+| --------------------------- | ----------------------------------------------- |
+| **HTML5**                   | Page structure                                  |
+| **TailwindCSS**             | Layout & styling using Tailwind utility classes |
+| **JavaScript (Vanilla JS)** | Game logic, DOM manipulation, event handling    |
 
 ---
 
 ## Folder Structure
+
+│── index.html
+│── script.js
+│
+├── /assets
+│ ├── /images
+│ │ ├── favicon.png
+│ │ └── header-bg.webp
+│ │
+│ └── /sounds
+│ ├── jankenpon.mp3
+│ ├── aikodesho.mp3
+│ ├── kachi.mp3
+│ ├── make.mp3
+│ └── aiko.mp3
+│
+└── README.md
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)
