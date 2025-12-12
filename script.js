@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const state = {
     playerScore: 0,
     computerScore: 0,
-    ties: 0,
+    draw: 0,
     gameOver: false,
   };
 
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Winner Results
   function playRound(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
-      state.draws++;
+      state.draw++;
       return "draw";
     }
 
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function updateLeaderboard() {
     playerScoreSpan.textContent = state.playerScore;
     computerScoreSpan.textContent = state.computerScore;
-    drawSpan.textContent = state.draws;
+    drawSpan.textContent = state.draw;
   }
 
   // The winner is the one that reach 5 points first
@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function resetGame() {
     state.playerScore = 0;
     state.computerScore = 0;
-    state.draws = 0;
+    state.draw = 0;
     state.gameOver = false;
 
     playerChoiceSpan.textContent = "-";

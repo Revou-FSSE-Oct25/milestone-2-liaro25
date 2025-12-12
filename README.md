@@ -1,109 +1,151 @@
-# Rock, Paper, Scissors Game
+# RevoFun – Mini Game Website
 
-_A JavaScript mini-game created for the RevoFun Milestone 2 project.  
-I named it **“Janken Pon - じゃんけんぽん！”** because it’s a game my kids play every
-single day — at school, at the park, and even at home._
+RevoFun is a collection of simple browser-based games created as part of RevoU Full Stack Software Engineering – Milestone 2.
+The goal of this project is to practice basic JavaScript, DOM manipulation, event handling, and UI building using Tailwind CSS.
 
-_I dedicated this to my children — so they can play something their Mama
-built, share it with their friends, and proudly say, “This is my Mama’s made game.”_
+While this began as a learning project, it became something more personal.
+I dedicated this to my children — so they can play something their Mama
+built, share it with their friends, and proudly say, “This is my Mama’s made game.”
 
-## Rules of the Game
-
-Rock, Paper, Scissors — or **Janken** in Japanese — is a classic game where the player chooses an option and the computer randomly selects one as well. It is **Player vs Computer**.
-
-The winner is determined by the following rules:
-
-- **🪨Rock (グー / Gū) beats ✂️Scissors (チョキ / Choki)**
-- **✂️Scissors (チョキ / Choki) beats 🔖Paper (パー / Pā)**
-- **🔖Paper (パー / Pā) beats 🪨Rock (グー / Gū)**
-
-If the result is a draw (**あいこ / Aiko**), the game continues just like Japanese kids play, and the screen will show **あいこでしょ！(Aiko desho!)** before the next round starts.
-
-This mini-game is built using **HTML, TailwindCSS, and JavaScript**, with dynamic interactions and real-time score updates.
+Live Website: **https://revou-fsse-oct25.github.io/milestone-2-liaro25/**  
+Repository: **https://github.com/Revou-FSSE-Oct25/milestone-2-liaro25**
 
 ---
 
-## Features
+## 1. Project Overview
 
-- **Interactive Selection** — Player can choose Rock, Paper, or Scissors.
-- **Computer Random Choice** — Computer picks an option every round.
-- **Score Tracking** — Player and computer scores update automatically.
-- **Instant Result Display** — Displays the results in Japanese:
-  - **You Win → 勝ち！(かち！ / Kachi!)**
-  - **You Lose → 負け！(まけ！ / Make!)**
-  - **Draw → あいこ！(Aiko!)**
-- **Back to Home Button** — Quickly return to the main landing page.
-- **Play Again button** - It will show jang kem poi i gotta show
+RevoFun is a playful landing page that links to three mini-games:
 
-### Sound Effects
+- 👊🖐️✌️ Rock • Paper • Scissors (Shoot!)
+- 1️⃣2️⃣3️⃣ Guess the Number (Guess!)
+- 🍕🍔🍟 Memory Card Game (Match!)
 
-The game includes a total of five original sound effects using real Japanese
-Janken expressions:
+### The objective of this project:
 
-1. **“じゃんけんぽん！” (Janken pon!)**
+- Practice JavaScript fundamentals
+- Learn how to use functions, conditions, loops, event listeners, and game logic
+- Apply HTML and Tailwind CSS for styling learned in Milestone-1
+- Understand how to structure a multi-page game website
 
-   - Used at the start of each round
-   - Romaji: _janken pon!_
+## 2. Project Features
 
-2. **“あいこでしょ！” (Aiko desho!)**
+### General Features
 
-   - Used when the result is a draw
-   - Romaji: _aiko desho!_
+- Responsive UI built using Tailwind CSS
+- Soft pastel theme and custom logo for kid-friendly design
+- Navigation bar + gradient header & footer and hamburger menu using JavaScript in responsive webpage
+- Gaming landing page website with three game pages (Shoot!, Guess!, Match!)
 
-3. **Win Sound — “勝ち！” (かち！ / Kachi!)**
+### Rock • Paper • Scissors (Shoot!)
 
-   - Japanese kids shout this when they win
+1. Click-based hand selection (✊ ✋ ✌️)
+2. Computer random choice generator
+3. Scoreboard: Player, Computer, Draw
+4. Round result announcement
+5. First to reach 5 points wins
+6. Reset Game button
+7. State management for score & round flow
 
-4. **Lose Sound — “負け！” (まけ！ / Make!)**
+### Guess the Number (Guess!)
 
-   - Used naturally by kids when they lose
+1. Random number generation
+2. User input validation
+3. Feedback system (Too high / too low / correct)
+4. Attempt counter
+5. Reset option
 
-5. **Draw Sound — “あいこ！” (Aiko!)**
-   - The standard word for "tie" in Janken
+### Memory Card Game (Match!)
 
-All five voice recordings are special because I specifically asked my kids and
-their Japanese friends at school to record the sounds.  
-This gives the game a fun, real, and authentic Japanese playground atmosphere.
+1. Grid-based memory tiles 8 pair memory card
+2. Flip card animation (CSS + JS)
+3. Match checking logic
+4. Win condition (all pairs found)
+5. Finishing time showed
+
+## 3. Technologies Used
+
+| Category               | Tools / Technologies     | Description                                        |
+| ---------------------- | ------------------------ | -------------------------------------------------- |
+| **Design**             | Figma                    | Initial wireframes and UI planning                 |
+|                        | Canva                    | Custom logo creation                               |
+| **Development**        | HTML5                    | Page structure                                     |
+|                        | Tailwind CSS             | Styling (first Tailwind project)                   |
+|                        | JavaScript (Vanilla)     | Game logic and interactions                        |
+|                        | GitHub Pages             | Deployment for the project                         |
+| **Learning Resources** | ChatGPT & Gemini         | Naming ideas, wording, and code review             |
+|                        | Sololearn                | Learning JavaScript fundamentals through exercises |
+|                        | WebDev YouTube Tutorials | Step-by-step game-building guides                  |
 
 ---
 
-## How to Play
+## 4. Pseudocode and FlowChart for each games
 
-1. Click **Rock**, **Paper**, or **Scissors**.
-2. The computer will automatically choose its option.
-3. If the result is a draw, the game will display **“あいこでしょ！” (Aiko desho!)** and continue to the next round automatically.
-4. The result and scores update immediately.
-5. Play as many rounds as you like!
+### Rock • Paper • Scissors (Shoot!)
 
----
+<p>Initialize playerScore, computerScore, drawCount = 0 <br>
+When player clicks a choice:<br>
+Generate random computer choice<br>
+Compare choices<br>
+If player wins, increment playerScore<br>
+If computer wins, increment computerScore<br>
+If draw, increment drawCount<br>
+Update scoreboard<br>
+If either score reaches 5:<br>
+Display winner and allow reset</p>
 
-## Technologies Used
+_screenshot flowchart_
 
-| Technology                  | Description                                     |
-| --------------------------- | ----------------------------------------------- |
-| **HTML5**                   | Page structure                                  |
-| **TailwindCSS**             | Layout & styling using Tailwind utility classes |
-| **JavaScript (Vanilla JS)** | Game logic, DOM manipulation, event handling    |
+### Guess the Number (Guess!)
 
----
+<p>Generate random number between 1 and 20<br>
+Set attempts = 0
+</p>
+<p>When player submits a guess:<br>
+Increment attempts<br>
+If guess < random number: show "Too low"<br>
+If guess > random number: show "Too high"<br>
+If guess == random number: show "Correct"<br>
+Allow reset to restart game</p>
 
-## Folder Structure
+_screenshot flowchart_
 
-│── index.html
-│── script.js
+### Memory Card Game (Match!)
+
+<p>Create a list of paired cards<br>
+Shuffle list<br>
+Render cards face down
+</p>
+<p>When first card is flipped:<br>
+Store the card<br>
+When second card is flipped:<br>
+Compare both cards<br>
+If match: keep flipped<br>
+Else: flip both back after delay<br>
+Repeat until all matches found<br>
+Display win message</p>
+
+_screenshot flowchart_
+
+## 5. Folder Structure
+
+```
+milestone-2-liaro
+├── assets/
+│ ├── backgroundHero.png
+│ ├── figma.png
+│ ├── guess.png
+│ ├── logo.png
+│ ├── match.png
+│ └── shoot.png
 │
-├── /assets
-│ ├── /images
-│ │ ├── favicon.png
-│ │ └── header-bg.webp
-│ │
-│ └── /sounds
-│ ├── jankenpon.mp3
-│ ├── aikodesho.mp3
-│ ├── kachi.mp3
-│ ├── make.mp3
-│ └── aiko.mp3
-│
+├── index.html
+├── shoot.html
+├── guess.html
+├── match.html
+├── script.js
 └── README.md
+```
+
+## 6. Screenshot Journey
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)
