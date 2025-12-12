@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Play Rock Paper Scissors (Shoot!) on RevoFun and practice your logic while having fun."
+    />
+    <meta name="author" content="Lia Rosliany" />
+    <title>RevoFun | Shoot! (Rock Paper Scissors)</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font helpers -->
+    <style>
+      .font-romaji {
+        font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
+      }
+    </style>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+  </head>
+
+  <body
+    class="min-h-screen flex flex-col bg-gradient-to-b from-rose-200 via-rose-100 to-orange-50"
+  >
+    <!-- HEADER -->
+    <header
+      class="py-4 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md"
+    >
+      <div
+        class="max-w-5xl mx-auto px-6 py-2 flex justify-between items-center"
+      >
+        <div class="flex items-center gap-4">
+          <img src="./assets/logo.png" class="w-16 h-16" alt="RevoFun Logo" />
+          <h1
+            class="font-romaji text-3xl md:text-4xl font-bold text-orange-700"
+          >
+            RevoFun ~ Shoot!
+          </h1>
+        </div>
+
+        <nav
+          class="font-romaji flex gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
+        >
+          <a href="index.html" class="hover:text-orange-600 transition">Home</a>
+          <a href="shoot.html" class="text-orange-900">Shoot!</a>
+          <a href="guess.html" class="hover:text-orange-600 transition"
+            >Guess!</a
+          >
+          <a href="match.html" class="hover:text-orange-600 transition"
+            >Match!</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT: GAME AREA -->
+    <main class="flex-1 max-w-3xl mx-auto mt-10 mb-16 px-4">
+      <section
+        class="bg-white rounded-2xl shadow-lg p-6 md:p-8 text-center space-y-6"
+      >
+        <div>
+          <h2
+            class="font-romaji text-2xl md:text-3xl text-orange-700 font-bold"
+          >
+            Rock · Paper · Scissors
+          </h2>
+          <p class="font-romaji text-sm md:text-base text-green-600">
+            The first one reached
+            <span class="font-semibold">5 points</span> wins!
+          </p>
+        </div>
+
+        <!-- CHOICE BUTTONS -->
+        <div class="flex justify-center gap-4 md:gap-6 mt-4">
+          <button
+            class="choice-btn bg-rose-100 hover:bg-rose-200 border border-rose-200 rounded-xl px-4 py-3 md:px-6 md:py-4 font-romaji text-base md:text-5xl text-orange-700 shadow-sm transition"
+            data-choice="rock"
+          >
+            ✊
+          </button>
+          <button
+            class="choice-btn bg-emerald-100 hover:bg-emerald-200 border border-emerald-200 rounded-xl px-4 py-3 md:px-6 md:py-4 font-romaji text-base md:text-5xl text-emerald-700 shadow-sm transition"
+            data-choice="paper"
+          >
+            ✋
+          </button>
+          <button
+            class="choice-btn bg-sky-100 hover:bg-sky-200 border border-sky-200 rounded-xl px-4 py-3 md:px-6 md:py-4 font-romaji text-base md:text-5xl text-sky-700 shadow-sm transition"
+            data-choice="scissors"
+          >
+            ✌️
+          </button>
+        </div>
+
+        <!-- ROUND RESULT -->
+        <div class="mt-4">
+          <p
+            id="round-result"
+            class="font-romaji text-xl text-orange-700 font-bold"
+          >
+            Let’s play! 1,2,3 Shoot! <br />
+            Choose Rock or Paper or Scissors!
+          </p>
+        </div>
+
+        <!-- CURRENT CHOICES -->
+        <div
+          class="mt-4 grid grid-cols-2 gap-4 text-sm md:text-base text-slate-700"
+        >
+          <div class="bg-slate-50 rounded-xl p-4">
+            <h3 class="font-romaji text-lg text-teal-700 font-semibold mb-1">
+              You
+            </h3>
+            <p>
+              Choice:
+              <span id="player-choice" class="font-semibold text-orange-700"
+                >-</span
+              >
+            </p>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-4">
+            <h3 class="font-romaji text-lg text-rose-700 font-semibold mb-1">
+              Computer
+            </h3>
+            <p>
+              Choice:
+              <span id="computer-choice" class="font-semibold text-orange-700"
+                >-</span
+              >
+            </p>
+          </div>
+        </div>
+
+        <!-- SCORE BOARD -->
+        <div
+          class="mt-4 grid grid-cols-3 gap-4 text-sm md:text-base text-slate-700"
+        >
+          <div class="bg-emerald-50 rounded-xl p-3">
+            <p class="font-romaji text-sm text-emerald-700 font-semibold">
+              Your Score
+            </p>
+            <p
+              id="player-score"
+              class="mt-1 text-2xl font-bold text-emerald-700"
+            >
+              0
+            </p>
+          </div>
+          <div class="bg-amber-50 rounded-xl p-3">
+            <p class="font-romaji text-sm text-amber-700 font-semibold">
+              Draw!
+            </p>
+            <p id="draw" class="mt-1 text-2xl font-bold text-amber-600">0</p>
+          </div>
+          <div class="bg-rose-50 rounded-xl p-3">
+            <p class="font-romaji text-sm text-rose-700 font-semibold">
+              Computer
+            </p>
+            <p
+              id="computer-score"
+              class="mt-1 text-2xl font-bold text-rose-700"
+            >
+              0
+            </p>
+          </div>
+        </div>
+
+        <!-- RESET BUTTON -->
+        <div class="mt-6">
+          <button
+            id="reset-game"
+            class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-romaji font-semibold text-sm md:text-base px-5 py-2.5 rounded-full shadow-md transition"
+          >
+            Reset Game
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="py-6 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md"
+    >
+      <div class="max-w-5xl mx-auto text-center font-romaji text-orange-700">
+        <p class="text-lg font-semibold">© 2025 RevoFun</p>
+        <p class="mt-1">Created with ♥ by Lia</p>
+      </div>
+    </footer>
+  </body>
+</html>

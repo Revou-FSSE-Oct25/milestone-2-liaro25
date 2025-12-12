@@ -27,10 +27,10 @@
       rel="stylesheet"
     />
 
-    <!-- Connecting html with JavaScript script.js file -->
+    <!-- JS -->
     <script src="script.js"></script>
 
-    <!-- Font include Font Fallback -->
+    <!-- Font helpers -->
     <style>
       .font-romaji {
         font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
@@ -41,83 +41,82 @@
     </style>
   </head>
 
-  <body class="bg-teal-100">
+  <body
+    class="min-h-screen flex flex-col bg-gradient-to-b from-rose-200 via-rose-100 to-orange-50"
+  >
     <!-- NAVBAR -->
-
-    <header class="py-4">
+    <header
+      class="py-4 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md w-full"
+    >
       <div
-        class="max-w-5xl mx-auto bg-yellow-100 shadow-md rounded-full px-6 py-3 flex justify-between items-center"
+        class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center"
       >
-        <h1 class="font-romaji text-2xl text-teal-700 font-bold">RevoFun</h1>
+        <!-- LEFT: Logo + Text -->
+        <div class="flex items-center space-x-3">
+          <img src="./assets/logo.png" class="w-40 h-40" alt="RevoFun Logo" />
+          <h1
+            class="font-romaji text-5xl font-bold bg-gradient-to-r from-pink-300 via-orange-300 to-teal-300 bg-clip-text text-transparent"
+          >
+            RevoFun
+          </h1>
+        </div>
 
         <nav
-          class="font-romaji flex space-x-6 text-teal-700 text-lg font-semibold"
+          class="font-romaji flex space-x-6 text-orange-700 text-lg font-semibold"
         >
-          <a href="index.html" class="hover:text-teal-500 transition">Home</a>
-          <a href="shoot.html" class="hover:text-teal-500 transition">Shoot!</a>
-          <a href="guess.html" class="hover:text-teal-500 transition">Guess!</a>
-          <a href="match.html#" class="hover:text-teal-500 transition"
+          <a href="index.html" class="hover:text-orange-600 transition">Home</a>
+          <a href="shoot.html" class="hover:text-orange-600 transition"
+            >Shoot!</a
+          >
+          <a href="guess.html" class="hover:text-orange-600 transition"
+            >Guess!</a
+          >
+          <a href="match.html" class="hover:text-orange-600 transition"
             >Match!</a
           >
         </nav>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="flex justify-center mt-6">
-      <img
-        src="./assets/backgroundHero.png"
-        class="w-full max-w-5xl rounded-xl shadow"
-      />
-    </section>
-
-    <main class="max-w-5xl mx-auto mt-10 mb-16 px-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Shoot! Card -->
+    <!-- MAIN CONTENT -->
+    <main class="max-w-5xl mx-auto mt-12 mb-20 px-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Shoot! -->
         <a
           href="shoot.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
         >
-          <img
-            src="./assets/rps.png"
-            alt="Rock Paper Scissors"
-            class="w-20 mx-auto mb-4"
-          />
-          <h2 class="font-romaji text-xl text-teal-700 font-bold">Shoot!</h2>
+          <img src="./assets/shoot.png" class="w-60 mx-auto mb-4" />
+          <h2 class="font-romaji text-xl text-orange-700 font-bold">Shoot!</h2>
         </a>
 
-        <!-- Guess! Card -->
+        <!-- Guess! -->
         <a
           href="guess.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
         >
-          <img
-            src="./assets/number.png"
-            alt="Number Guessing"
-            class="w-20 mx-auto mb-4"
-          />
-          <h2 class="font-romaji text-xl text-teal-700 font-bold">Guess!</h2>
+          <img src="./assets/guess.png" class="w-60 mx-auto mb-4" />
+          <h2 class="font-romaji text-xl text-orange-700 font-bold">Guess!</h2>
         </a>
 
-        <!-- Match! Card -->
+        <!-- Match! -->
         <a
           href="match.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
         >
-          <img
-            src="./assets/memory.png"
-            alt="Memory Card Game"
-            class="w-20 mx-auto mb-4"
-          />
-          <h2 class="font-romaji text-xl text-teal-700 font-bold">Match!</h2>
+          <img src="./assets/match.png" class="w-60 mx-auto mb-4" />
+          <h2 class="font-romaji text-xl text-orange-700 font-bold">Match!</h2>
         </a>
       </div>
     </main>
 
-    <footer class="mt-16 py-6 bg-yellow-100">
-      <div class="max-w-5xl mx-auto text-center font-romaji text-teal-700">
+    <!-- FOOTER -->
+    <footer
+      class="py-6 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md"
+    >
+      <div class="max-w-5xl mx-auto text-center font-romaji text-orange-700">
         <p class="text-lg font-semibold">© 2025 RevoFun</p>
-        <p class="text-sm mt-1">Created with ♥ by Lia</p>
+        <p class="mt-1">Created with ♥ by Lia</p>
       </div>
     </footer>
   </body>

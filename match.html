@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="RevoFun is a fun mini game website featuring Rock Paper Scissors, Number Guessing, and Memory Card games to practice logic and have fun."
+    />
+    <meta name="author" content="Lia Rosliany" />
+    <title>
+      RevoFun | Mini Games: Rock Paper Scissors, Number Guessing, Memory Card
+    </title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Connecting html with JavaScript script.js file -->
+    <script src="script.js"></script>
+
+    <!-- Font include Font Fallback -->
+    <style>
+      .font-romaji {
+        font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
+      }
+      .font-jp {
+        font-family: "Kosugi Maru", "Noto Sans JP", "Hiragino Sans", sans-serif;
+      }
+    </style>
+  </head>
+
+  <body class="bg-teal-100">
+    <!-- NAVBAR -->
+
+    <header class="py-4">
+      <div
+        class="max-w-5xl mx-auto bg-yellow-100 shadow-md rounded-full px-6 py-3 flex justify-between items-center"
+      >
+        <h1 class="font-romaji text-2xl text-teal-700 font-bold">RevoFun</h1>
+
+        <nav
+          class="font-romaji flex space-x-6 text-teal-700 text-lg font-semibold"
+        >
+          <a href="index.html" class="hover:text-teal-500 transition">Home</a>
+          <a href="shoot.html" class="hover:text-teal-500 transition">Shoot!</a>
+          <a href="guess.html" class="hover:text-teal-500 transition">Guess!</a>
+          <a href="match.html#" class="hover:text-teal-500 transition"
+            >Match!</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="flex justify-center mt-6">
+      <img
+        src="./assets/backgroundHero.png"
+        class="w-full max-w-5xl rounded-xl shadow"
+      />
+    </section>
+
+    <main></main>
+
+    <footer class="mt-16 py-6 bg-yellow-100">
+      <div class="max-w-5xl mx-auto text-center font-romaji text-teal-700">
+        <p class="text-lg font-semibold">© 2025 RevoFun</p>
+        <p class="text-sm mt-1">Created with ♥ by Lia</p>
+      </div>
+    </footer>
+  </body>
+</html>
