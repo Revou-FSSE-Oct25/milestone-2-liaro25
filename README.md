@@ -76,9 +76,11 @@ RevoFun is a playful landing page that links to three mini-games:
 |                        | Sololearn            | Learning JavaScript fundamentals through exercises |
 |                        | YouTube Tutorials    | Step-by-step game-building guides                  |
 
-### Rock • Paper • Scissors (Shoot!) Tutorials
+### Game Making Tutorials
 
 Web Development Tutorial - JavaScript, HTML, CSS - Rock Paper Scissors Game - https://www.youtube.com/watch?v=jaVNP3nIAv0
+Build Memory Game Project | HTML CSS JavaScript Fun Game for Beginners 2025 - https://www.youtube.com/watch?v=rcWBLFXH7uA
+Guess the Number Game Project | Revou Interactive Demo Session Week 7 Guess the Number github repository.
 
 ---
 
@@ -101,8 +103,8 @@ _screenshot flowchart_
 
 ### Guess the Number (Guess!)
 
-<p>Generate random number between 1 and 20<br>
-Set attempts = 0
+<p>Generate random number between 1 and 100<br>
+Set attempts = 10
 </p>
 <p>When player submits a guess:<br>
 Increment attempts<br>
