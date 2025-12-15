@@ -5,12 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="RevoFun is a fun mini game website featuring Rock Paper Scissors, Number Guessing, and Memory Card games to practice logic and have fun."
+      content="Play Rock Paper Scissors (Shoot!) on RevoFun and practice your logic while having fun."
     />
     <meta name="author" content="Lia Rosliany" />
-    <title>
-      RevoFun | Mini Games: Rock Paper Scissors, Number Guessing, Memory Card
-    </title>
+    <title>RevoFun | Match! Memory Card Matching Games</title>
 
     <!-- Tailwind CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -22,61 +20,353 @@
       href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&family=Noto+Sans+JP:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
 
-    <!-- Connecting html with JavaScript script.js file -->
-    <script src="script.js"></script>
-
-    <!-- Font include Font Fallback -->
+    <!-- Font helpers -->
     <style>
       .font-romaji {
         font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
       }
-      .font-jp {
-        font-family: "Kosugi Maru", "Noto Sans JP", "Hiragino Sans", sans-serif;
+    </style>
+
+    <style>
+      .font-romaji {
+        font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
+      }
+
+      /* ===== MEMORY CARD FLIP ===== */
+      .memory-card {
+        perspective: 1000px;
+      }
+
+      .card-inner {
+        position: relative;
+        width: 100%;
+        padding-top: 100%;
+        transform-style: preserve-3d;
+        transition: transform 0.6s;
+      }
+
+      .memory-card.flip .card-inner {
+        transform: rotateY(180deg);
+      }
+
+      .card-front,
+      .card-back {
+        position: absolute;
+        inset: 0;
+        backface-visibility: hidden;
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+      }
+
+      .card-front {
+        transform: rotateY(180deg);
       }
     </style>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
   </head>
 
-  <body class="bg-teal-100">
-    <!-- NAVBAR -->
-
-    <header class="py-4">
+  <body
+    class="min-h-screen flex flex-col bg-gradient-to-b from-rose-200 via-rose-100 to-orange-50"
+  >
+    <header
+      class="py-4 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md"
+    >
       <div
-        class="max-w-5xl mx-auto bg-yellow-100 shadow-md rounded-full px-6 py-3 flex justify-between items-center"
+        class="max-w-5xl mx-auto px-6 py-2 flex justify-between items-center"
       >
-        <h1 class="font-romaji text-2xl text-teal-700 font-bold">RevoFun</h1>
-
-        <nav
-          class="font-romaji flex space-x-6 text-teal-700 text-lg font-semibold"
-        >
-          <a href="index.html" class="hover:text-teal-500 transition">Home</a>
-          <a href="shoot.html" class="hover:text-teal-500 transition">Shoot!</a>
-          <a href="guess.html" class="hover:text-teal-500 transition">Guess!</a>
-          <a href="match.html#" class="hover:text-teal-500 transition"
-            >Match!</a
+        <!-- Left: Logo + Title -->
+        <div class="flex items-center gap-4">
+          <img src="./assets/logo.png" class="w-16 h-16" alt="RevoFun Logo" />
+          <h1
+            class="font-romaji text-3xl md:text-4xl font-bold text-orange-700"
           >
+            RevoFun ~ Match!
+          </h1>
+        </div>
+
+        <!-- Mobile hamburger button -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/70 hover:bg-white shadow-sm border border-orange-100 text-orange-700"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          type="button"
+        >
+          <!-- icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Desktop menu -->
+        <nav
+          class="hidden md:flex font-romaji gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
+        >
+          <a href="index.html" class="hover:text-orange-600 transition">Home</a>
+          <a href="shoot.html" class="hover:text-orange-600 transition"
+            >Shoot!</a
+          >
+          <a href="guess.html" class="hover:text-orange-600 transition"
+            >Guess!</a
+          >
+          <a href="match.html" class="text-orange-900">Match!</a>
         </nav>
+      </div>
+
+      <!-- Mobile dropdown menu -->
+      <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+        <div
+          class="bg-white/70 backdrop-blur rounded-2xl border border-orange-100 shadow-sm p-4"
+        >
+          <nav
+            class="font-romaji flex flex-col gap-3 text-orange-700 text-base font-semibold"
+          >
+            <a href="index.html" class="hover:text-orange-600 transition"
+              >Home</a
+            >
+            <a href="shoot.html" class="hover:text-orange-600 transition"
+              >Shoot!</a
+            >
+            <a href="guess.html" class="hover:text-orange-600 transition"
+              >Guess!</a
+            >
+            <a href="match.html" class="text-orange-900">Match!</a>
+          </nav>
+        </div>
       </div>
     </header>
 
-    <!-- HERO -->
-    <section class="flex justify-center mt-6">
-      <img
-        src="./assets/backgroundHero.png"
-        class="w-full max-w-5xl rounded-xl shadow"
-      />
-    </section>
+    <!-- MAIN CONTENT: GAME AREA -->
+    <main>
+      <!-- SCOREBOARD -->
+      <div class="grid grid-cols-3 gap-4 md:gap-6 max-w-xl mx-auto mt-10">
+        <!-- MOVES -->
+        <div class="relative">
+          <!-- shadow layer -->
+          <div
+            class="absolute inset-0 translate-y-2 rounded-2xl bg-orange-200"
+          ></div>
 
-    <main></main>
+          <!-- main card -->
+          <div
+            class="relative rounded-2xl bg-orange-100 px-4 py-3 md:px-6 md:py-4 text-orange-700 shadow-sm"
+          >
+            <p class="font-romaji text-sm md:text-base opacity-80">Moves</p>
+            <p
+              id="movesCount"
+              class="font-romaji text-3xl md:text-4xl font-bold leading-tight"
+            >
+              0
+            </p>
+          </div>
+        </div>
 
-    <footer class="mt-16 py-6 bg-yellow-100">
-      <div class="max-w-5xl mx-auto text-center font-romaji text-teal-700">
+        <!-- TIME -->
+        <div class="relative">
+          <div
+            class="absolute inset-0 translate-y-2 rounded-2xl bg-sky-200"
+          ></div>
+
+          <div
+            class="relative rounded-2xl bg-sky-100 px-4 py-3 md:px-6 md:py-4 text-rose-700 shadow-sm"
+          >
+            <p class="font-romaji text-sm md:text-base opacity-80">Time</p>
+            <p
+              id="timeDisplay"
+              class="font-romaji text-3xl md:text-4xl font-bold leading-tight"
+            >
+              0:00
+            </p>
+          </div>
+        </div>
+
+        <!-- MATCHES -->
+        <div class="relative">
+          <div
+            class="absolute inset-0 translate-y-2 rounded-2xl bg-emerald-200"
+          ></div>
+
+          <div
+            class="relative rounded-2xl bg-emerald-100 px-4 py-3 md:px-6 md:py-4 text-slate-700 shadow-sm"
+          >
+            <p class="font-romaji text-sm md:text-base opacity-80">Matches</p>
+            <p
+              id="matchesCount"
+              class="font-romaji text-3xl md:text-4xl font-bold leading-tight"
+            >
+              0/8
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MEMORY CARD GRID -->
+      <div class="mt-12 grid grid-cols-4 gap-4 max-w-md mx-auto">
+        <!-- CARD 1 -->
+        <div class="memory-card" data-card="🍎">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍎</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="memory-card" data-card="🍎">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍎</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="memory-card" data-card="🍌">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍌</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="memory-card" data-card="🍌">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍌</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="memory-card" data-card="🍇">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍇</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="memory-card" data-card="🍇">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍇</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="memory-card" data-card="🍓">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍓</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="memory-card" data-card="🍓">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍓</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="memory-card" data-card="🥐">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🥐</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="memory-card" data-card="🥐">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🥐</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="memory-card" data-card="🍩">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍩</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="memory-card" data-card="🍩">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍩</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 13 -->
+        <div class="memory-card" data-card="🍕">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍕</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 14 -->
+        <div class="memory-card" data-card="🍕">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍕</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 15 -->
+        <div class="memory-card" data-card="🍔">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍔</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+
+        <!-- CARD 16 -->
+        <div class="memory-card" data-card="🍔">
+          <div class="card-inner">
+            <div class="card-front text-5xl">🍔</div>
+            <div class="card-back text-4xl">❓</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RESET BUTTON -->
+      <div class="mt-6 flex justify-center mb-4">
+        <button
+          id="resetBtn"
+          class="items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-romaji font-semibold text-sm md:text-base px-5 py-2.5 rounded-full shadow-md transition"
+        >
+          Reset Game
+        </button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="py-6 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md"
+    >
+      <div class="max-w-5xl mx-auto text-center font-romaji text-orange-700">
         <p class="text-lg font-semibold">© 2025 RevoFun</p>
-        <p class="text-sm mt-1">Created with ♥ by Lia</p>
+        <p class="mt-1">Created with ♥ by Lia</p>
       </div>
     </footer>
   </body>
