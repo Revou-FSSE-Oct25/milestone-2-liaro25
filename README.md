@@ -64,17 +64,21 @@ RevoFun is a playful landing page that links to three mini-games:
 
 ## 3. Technologies Used
 
-| Category               | Tools / Technologies     | Description                                        |
-| ---------------------- | ------------------------ | -------------------------------------------------- |
-| **Design**             | Figma                    | Initial wireframes and UI planning                 |
-|                        | Canva                    | Custom logo creation                               |
-| **Development**        | HTML5                    | Page structure                                     |
-|                        | Tailwind CSS             | Styling (first Tailwind project)                   |
-|                        | JavaScript (Vanilla)     | Game logic and interactions                        |
-|                        | GitHub Pages             | Deployment for the project                         |
-| **Learning Resources** | ChatGPT & Gemini         | Naming ideas, wording, and code review             |
-|                        | Sololearn                | Learning JavaScript fundamentals through exercises |
-|                        | WebDev YouTube Tutorials | Step-by-step game-building guides                  |
+| Category               | Tools / Technologies | Description                                        |
+| ---------------------- | -------------------- | -------------------------------------------------- |
+| **Design**             | Figma                | Initial wireframes and UI planning                 |
+|                        | Canva                | Custom logo creation                               |
+| **Development**        | HTML5                | Page structure                                     |
+|                        | Tailwind CSS         | Styling (first Tailwind project)                   |
+|                        | JavaScript (Vanilla) | Game logic and interactions                        |
+|                        | GitHub Pages         | Deployment for the project                         |
+| **Learning Resources** | ChatGPT & Gemini     | Naming ideas, wording, and code review             |
+|                        | Sololearn            | Learning JavaScript fundamentals through exercises |
+|                        | YouTube Tutorials    | Step-by-step game-building guides                  |
+
+### Rock • Paper • Scissors (Shoot!) Tutorials
+
+Web Development Tutorial - JavaScript, HTML, CSS - Rock Paper Scissors Game - https://www.youtube.com/watch?v=jaVNP3nIAv0
 
 ---
 
