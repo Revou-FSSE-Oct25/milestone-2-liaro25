@@ -78,9 +78,9 @@ RevoFun is a playful landing page that links to three mini-games:
 
 ### Game Making Tutorials
 
-Web Development Tutorial - JavaScript, HTML, CSS - Rock Paper Scissors Game - https://www.youtube.com/watch?v=jaVNP3nIAv0
-Build Memory Game Project | HTML CSS JavaScript Fun Game for Beginners 2025 - https://www.youtube.com/watch?v=rcWBLFXH7uA
-Guess the Number Game Project | Revou Interactive Demo Session Week 7 Guess the Number github repository.
+- Web Development Tutorial - JavaScript, HTML, CSS - Rock Paper Scissors Game - https://www.youtube.com/watch?v=jaVNP3nIAv0
+- Build Memory Game Project | HTML CSS JavaScript Fun Game for Beginners 2025 - https://www.youtube.com/watch?v=rcWBLFXH7uA
+- Guess the Number Game Project | Revou Interactive Demo Session Week 7 Guess the Number github repository.
 
 ---
 
@@ -113,7 +113,7 @@ Allow reset to restart game</p>
 
 ### Memory Card Game (Match!)
 
-<p>Create a list of paired cards<br>
+<p>Create 8 pair cards<br>
 Shuffle list<br>
 Render cards face down
 </p>

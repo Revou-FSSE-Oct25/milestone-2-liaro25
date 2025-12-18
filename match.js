@@ -1,53 +1,50 @@
 // ==================================
 // Memory Card (Match!)
 // ==================================
+
+// Get all required elements from the HTML
 (function initMatch() {
   const cards = document.querySelectorAll(".memory-card");
-  if (!cards.length) return; // Not on match.html
-
   const movesCountEl = document.getElementById("movesCount");
   const matchesCountEl = document.getElementById("matchesCount");
   const timeDisplayEl = document.getElementById("timeDisplay");
   const resetBtnMatch = document.getElementById("resetBtn");
-
-  if (!movesCountEl || !matchesCountEl || !timeDisplayEl || !resetBtnMatch) {
-    console.error("[MATCH] Missing IDs. Need: movesCount, matchesCount, timeDisplay, resetBtn");
-    return;
-  }
-
   const totalCards = cards.length;
   const totalPairs = Math.floor(totalCards / 2);
 
+// Game Variables
   let firstCard = null;
   let secondCard = null;
   let lockBoard = false;
-
   let moves = 0;
   let matches = 0;
-
   let seconds = 0;
   let timer = null;
 
+// Starts the game timer on the first player action
   function startTimer() {
     if (timer) return;
     timer = setInterval(() => {
       seconds++;
-      const min = Math.floor(seconds / 60);
+      const min = Math.floor(seconds / 60); //converting from seconds to minutes
       const sec = seconds % 60;
       timeDisplayEl.textContent = `${min}:${sec.toString().padStart(2, "0")}`;
     }, 1000);
   }
 
+// Stop the time when player finished the game or when game being reset
   function stopTimer() {
     clearInterval(timer);
-    timer = null;
+    timer = null; // startTimer can run again 
   }
 
+// When matching pairs found it will update the score board  
   function updateScoreboard() {
     movesCountEl.textContent = moves;
     matchesCountEl.textContent = `${matches}/${totalPairs}`;
   }
 
+// Reset current turn and unlock the board for the next round
   function resetBoard() {
     firstCard = null;
     secondCard = null;
@@ -60,6 +57,7 @@
     });
   }
 
+// Handle matched card pair: lock cards, update score, and check win condition
   function handleMatch() {
     firstCard.removeEventListener("click", flipCard);
     secondCard.removeEventListener("click", flipCard);
@@ -76,6 +74,7 @@
     }
   }
 
+// Handle mismatched cards: flip them back after a short delay
   function handleMismatch() {
     setTimeout(() => {
       firstCard.classList.remove("flip");
@@ -84,6 +83,7 @@
     }, 800);
   }
 
+//// Handle card click events, manage flipped cards, and update move count  
   function flipCard() {
     if (lockBoard) return;
     if (this === firstCard) return;
@@ -107,6 +107,7 @@
     else handleMismatch();
   }
 
+// Fully reset game state, timer, and card interactions
   function resetGame() {
     stopTimer();
     moves = 0;
@@ -126,6 +127,7 @@
     resetBoard();
   }
 
+// Attach event listeners to cards and reset button
   cards.forEach((card) => card.addEventListener("click", flipCard));
   resetBtnMatch.addEventListener("click", resetGame);
 

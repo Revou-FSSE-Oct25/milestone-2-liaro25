@@ -2,9 +2,7 @@
 // Guess the Number (Guess!)
 // ==================================
 
-// Encapsulate Guess the Number game logic
-// Prevents variable conflicts with other games on the site
-
+// Get all required elements from the HTML
 (function initGuess() {
   const guessInput = document.getElementById("guessInput");
   const submitBtn = document.getElementById("submitBtn");
@@ -17,11 +15,13 @@
   const previousGuessesList = document.getElementById("guessList");
   const previousGuessesContainer = document.getElementById("previousGuesses");
 
+// Game Variables
   let targetNumber;
   let attemptsLeft;
   let gameActive;
   let previousGuesses;
 
+// Initial state, generate random number from 1-100 with 10 attempts 
   function initGame() {
     targetNumber = Math.floor(Math.random() * 100) + 1;
     attemptsLeft = 10;
@@ -42,6 +42,7 @@
     guessInput.focus();
   }
 
+// Validate user input and ensure it is a number between 1 and 100
   function validateInput(input) {
     const number = Number(input);
     if (!Number.isInteger(number)) {
@@ -53,6 +54,7 @@
     return { isValid: true, number };
   }
 
+// Display feedback messages and apply styles based on message type
   function showFeedback(message, type = "info") {
     feedback.textContent = message;
     feedback.classList.remove(
@@ -74,6 +76,7 @@
     else feedback.classList.add("bg-blue-100", "text-blue-800");
   }
 
+// Save the user's guess and display it in the guess history
   function addToPreviousGuesses(guess) {
     previousGuesses.push(guess);
     const guessSpan = document.createElement("span");
@@ -83,6 +86,7 @@
     previousGuessesContainer.classList.remove("hidden");
   }
 
+// End the game and display the game-over screen (win or lose)
   function endGame(won) {
     gameActive = false;
     guessInput.disabled = true;
@@ -104,6 +108,8 @@
       `;
     }
   }
+
+  //Core game function
 
   function processGuess(guess) {
     attemptsLeft--;
@@ -128,6 +134,7 @@
     guessInput.focus();
   }
 
+// Handler when user click submit
   function handleSubmit() {
     if (!gameActive) return;
 
@@ -141,6 +148,7 @@
     processGuess(validation.number);
   }
 
+// Allow users to submit guesses using the Enter key for better UX
   submitBtn.addEventListener("click", handleSubmit);
   guessInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") handleSubmit();
