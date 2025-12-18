@@ -13,9 +13,6 @@
   const previousGuessesList = document.getElementById("guessList");
   const previousGuessesContainer = document.getElementById("previousGuesses");
 
-  // Not on guess.html
-  if (!guessInput || !submitBtn || !resetBtnGuess) return;
-
   let targetNumber;
   let attemptsLeft;
   let gameActive;

@@ -28,7 +28,7 @@
     />
 
     <!-- JS -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 
     <!-- Font helpers -->
     <style>
@@ -60,6 +60,32 @@
             RevoFun
           </h1>
         </div>
+
+        <!-- Mobile hamburger button -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/70 hover:bg-white shadow-sm border border-orange-100 text-orange-700"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          type="button"
+        >
+          <!-- icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
 
         <nav
           class="font-romaji flex space-x-6 text-orange-700 text-lg font-semibold"

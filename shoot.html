@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Play Rock Paper Scissors (Shoot!) on RevoFun and practice your logic while having fun."
+      content="Play Rock Paper Scissors (Shoot!) on RevoFun!"
     />
     <meta name="author" content="Lia Rosliany" />
     <title>RevoFun | Shoot! (Rock Paper Scissors)</title>
@@ -21,7 +21,7 @@
       rel="stylesheet"
     />
 
-    <!-- Font helpers -->
+    <!-- Font and font backup -->
     <style>
       .font-romaji {
         font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
@@ -29,6 +29,7 @@
     </style>
 
     <!-- JS -->
+    <script src="script.js" defer></script>
     <script src="shoot.js" defer></script>
   </head>
 
@@ -45,13 +46,14 @@
         <div class="flex items-center gap-4">
           <img src="./assets/logo.png" class="w-16 h-16" alt="RevoFun Logo" />
           <h1
-            class="font-romaji text-3xl md:text-4xl font-bold text-orange-700"
+            class="font-romaji text-3xl font-bold bg-gradient-to-r from-pink-300 via-orange-300 to-teal-300 bg-clip-text text-transparent"
           >
             RevoFun ~ Shoot!
           </h1>
         </div>
 
         <nav
+          aria-label="Main navigation"
           class="font-romaji flex gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
         >
           <a href="index.html" class="hover:text-orange-600 transition">Home</a>
@@ -79,25 +81,28 @@
           </h2>
           <p class="font-romaji text-sm md:text-base text-green-600">
             The first one reached
-            <span class="font-semibold">5 points</span> wins!
+            <span class="font-semibold">3 points</span> wins!
           </p>
         </div>
 
-        <!-- CHOICE BUTTONS -->
+        <!-- Player choice buttons (used by shoot.js) -->
         <div class="flex justify-center gap-4 md:gap-6 mt-4">
           <button
+            aria-label="Choose Rock"
             class="choice-btn bg-rose-100 hover:bg-rose-200 border border-rose-200 rounded-xl px-4 py-3 md:px-6 md:py-4 font-romaji text-base md:text-5xl text-orange-700 shadow-sm transition"
             data-choice="rock"
           >
             ✊
           </button>
           <button
+            aria-label="Choose Paper"
             class="choice-btn bg-emerald-100 hover:bg-emerald-200 border border-emerald-200 rounded-xl px-4 py-3 md:px-6 md:py-4 font-romaji text-base md:text-5xl text-emerald-700 shadow-sm transition"
             data-choice="paper"
           >
             ✋
           </button>
           <button
+            aria-label="Choose Scissors"
             class="choice-btn bg-sky-100 hover:bg-sky-200 border border-sky-200 rounded-xl px-4 py-3 md:px-6 md:py-4 font-romaji text-base md:text-5xl text-sky-700 shadow-sm transition"
             data-choice="scissors"
           >
@@ -107,8 +112,10 @@
 
         <!-- ROUND RESULT -->
         <div class="mt-4">
+          <!--Result text updates dynamically, announced via aria-live -->
           <p
             id="round-result"
+            aria-live="polite"
             class="font-romaji text-xl text-orange-700 font-bold"
           >
             Let’s play! 1,2,3 Shoot! <br />
@@ -126,6 +133,8 @@
             </h3>
             <p>
               Choice:
+              <!--Used by shoot.js
+-->
               <span id="player-choice" class="font-semibold text-orange-700"
                 >-</span
               >
@@ -137,6 +146,8 @@
             </h3>
             <p>
               Choice:
+              <!--Used by shoot.js
+-->
               <span id="computer-choice" class="font-semibold text-orange-700"
                 >-</span
               >
@@ -152,6 +163,7 @@
             <p class="font-romaji text-sm text-emerald-700 font-semibold">
               Your Score
             </p>
+            <!--Used by shoot.js-->
             <p
               id="player-score"
               class="mt-1 text-2xl font-bold text-emerald-700"
@@ -163,12 +175,14 @@
             <p class="font-romaji text-sm text-amber-700 font-semibold">
               Draw!
             </p>
+            <!--Used by shoot.js-->
             <p id="draw" class="mt-1 text-2xl font-bold text-amber-600">0</p>
           </div>
           <div class="bg-sky-50 rounded-xl p-3">
             <p class="font-romaji text-sm text-blue-700 font-semibold">
               Computer
             </p>
+            <!--Used by shoot.js-->
             <p
               id="computer-score"
               class="mt-1 text-2xl font-bold text-blue-700"
@@ -180,8 +194,10 @@
 
         <!-- RESET BUTTON -->
         <div class="mt-6">
+          <!--Used by shoot.js-->
           <button
             id="reset-game"
+            aria-label="Reset Rock Paper Scissors game"
             class="inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 text-white font-romaji font-semibold text-sm md:text-base px-5 py-2.5 rounded-full shadow-md transition"
           >
             Reset Game
@@ -192,7 +208,7 @@
 
     <!-- FOOTER -->
     <footer
-      class="py-6 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md"
+      class="py-6 bg-gradient-to-r from-rose-200 via-rose-100 to-orange-50 shadow-md"
     >
       <div class="max-w-5xl mx-auto text-center font-romaji text-orange-700">
         <p class="text-lg font-semibold">© 2025 RevoFun</p>

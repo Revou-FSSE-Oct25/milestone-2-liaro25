@@ -96,10 +96,8 @@ If player wins, increment playerScore<br>
 If computer wins, increment computerScore<br>
 If draw, increment drawCount<br>
 Update scoreboard<br>
-If either score reaches 5:<br>
+If either score reaches 3:<br>
 Display winner and allow reset</p>
-
-_screenshot flowchart_
 
 ### Guess the Number (Guess!)
 
@@ -112,8 +110,6 @@ If guess < random number: show "Too low"<br>
 If guess > random number: show "Too high"<br>
 If guess == random number: show "Correct"<br>
 Allow reset to restart game</p>
-
-_screenshot flowchart_
 
 ### Memory Card Game (Match!)
 
@@ -130,26 +126,26 @@ Else: flip both back after delay<br>
 Repeat until all matches found<br>
 Display win message</p>
 
-_screenshot flowchart_
-
 ## 5. Folder Structure
 
 ```
 milestone-2-liaro
-├── assets/
-│ ├── backgroundHero.png
-│ ├── figma.png
-│ ├── guess.png
-│ ├── logo.png
-│ ├── match.png
-│ └── shoot.png
-│
-├── index.html
-├── shoot.html
+├── assets
+│   ├── backgroundHero.png
+│   ├── figma.png
+│   ├── guess.png
+│   ├── logo.png
+│   ├── match.png
+│   └── shoot.png
 ├── guess.html
+├── guess.js
+├── index.html
 ├── match.html
+├── match.js
+├── README.md
 ├── script.js
-└── README.md
+├── shoot.html
+└── shoot.js
 ```
 
 ## 6. Screenshot Journey
