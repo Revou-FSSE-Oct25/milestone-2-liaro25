@@ -42,7 +42,7 @@ RevoFun is a playful landing page that links to three mini-games:
 2. Computer random choice generator
 3. Scoreboard: Player, Computer, Draw
 4. Round result announcement
-5. First to reach 5 points wins
+5. First to reach 3 points wins
 6. Reset Game button
 7. State management for score & round flow
 
