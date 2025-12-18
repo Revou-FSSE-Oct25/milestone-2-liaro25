@@ -52,9 +52,35 @@
           </h1>
         </div>
 
+        <!-- Mobile hamburger button -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/70 hover:bg-white shadow-sm border border-orange-100 text-orange-700"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          type="button"
+        >
+          <!-- icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Desktop menu -->
         <nav
-          aria-label="Main navigation"
-          class="font-romaji flex gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
+          class="hidden md:flex font-romaji gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
         >
           <a href="index.html" class="hover:text-orange-600 transition">Home</a>
           <a href="shoot.html" class="text-orange-900">Shoot!</a>
@@ -65,6 +91,28 @@
             >Match!</a
           >
         </nav>
+      </div>
+
+      <!-- Mobile dropdown menu -->
+      <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+        <div
+          class="bg-white/70 backdrop-blur rounded-2xl border border-orange-100 shadow-sm p-4"
+        >
+          <nav
+            class="font-romaji flex flex-col gap-3 text-orange-700 text-base font-semibold"
+          >
+            <a href="index.html" class="hover:text-orange-600 transition"
+              >Home</a
+            >
+            <a href="shoot.html" class="text-orange-900">Shoot!</a>
+            <a href="guess.html" class="hover:text-orange-600 transition"
+              >Guess!</a
+            >
+            <a href="match.html" class="hover:text-orange-600 transition"
+              >Match!</a
+            >
+          </nav>
+        </div>
       </div>
     </header>
 

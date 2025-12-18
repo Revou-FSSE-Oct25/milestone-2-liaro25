@@ -29,6 +29,7 @@
     </style>
 
     <!-- JS -->
+    <script src="script.js" defer></script>
     <script src="guess.js" defer></script>
   </head>
 
@@ -45,14 +46,41 @@
         <div class="flex items-center gap-4">
           <img src="./assets/logo.png" class="w-16 h-16" alt="RevoFun Logo" />
           <h1
-            class="font-romaji text-3xl md:text-4xl font-bold text-orange-700"
+            class="font-romaji text-3xl font-bold bg-gradient-to-r from-pink-300 via-orange-300 to-teal-300 bg-clip-text text-transparent"
           >
             RevoFun ~ Guess!
           </h1>
         </div>
 
+        <!-- Mobile hamburger button -->
+        <button
+          id="menuBtn"
+          class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/70 hover:bg-white shadow-sm border border-orange-100 text-orange-700"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="mobileMenu"
+          type="button"
+        >
+          <!-- icon -->
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-6 h-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </button>
+
+        <!-- Desktop menu -->
         <nav
-          class="font-romaji flex gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
+          class="hidden md:flex font-romaji gap-4 md:gap-6 text-orange-700 text-lg font-semibold"
         >
           <a href="index.html" class="hover:text-orange-600 transition">Home</a>
           <a href="shoot.html" class="hover:text-orange-600 transition"
@@ -63,6 +91,28 @@
             >Match!</a
           >
         </nav>
+      </div>
+
+      <!-- Mobile dropdown menu -->
+      <div id="mobileMenu" class="md:hidden hidden px-6 pb-4">
+        <div
+          class="bg-white/70 backdrop-blur rounded-2xl border border-orange-100 shadow-sm p-4"
+        >
+          <nav
+            class="font-romaji flex flex-col gap-3 text-orange-700 text-base font-semibold"
+          >
+            <a href="index.html" class="hover:text-orange-600 transition"
+              >Home</a
+            >
+            <a href="shoot.html" class="hover:text-orange-600 transition"
+              >Shoot!</a
+            >
+            <a href="guess.html" class="text-orange-900">Guess!</a>
+            <a href="match.html" class="hover:text-orange-600 transition"
+              >Match!</a
+            >
+          </nav>
+        </div>
       </div>
     </header>
 

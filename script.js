@@ -15,7 +15,7 @@
     menuBtn.setAttribute("aria-expanded", String(isHidden));
   });
 
-  // Optional: close menu when clicking a link
+  // Close menu when clicking a link
   mobileMenu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
       mobileMenu.classList.add("hidden");

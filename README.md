@@ -150,4 +150,10 @@ milestone-2-liaro
 
 ## 6. Screenshot Journey
 
+## 7. Future Development Plans
+
+- Add animations and sound effects to enhance gameplay
+- Add win sound effects across all games
+- Implement a Top 5 leaderboard with player names and scores
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)

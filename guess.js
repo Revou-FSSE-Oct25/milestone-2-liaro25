@@ -1,6 +1,10 @@
 // ==================================
 // Guess the Number (Guess!)
 // ==================================
+
+// Encapsulate Guess the Number game logic
+// Prevents variable conflicts with other games on the site
+
 (function initGuess() {
   const guessInput = document.getElementById("guessInput");
   const submitBtn = document.getElementById("submitBtn");
