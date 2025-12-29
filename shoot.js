@@ -71,7 +71,7 @@
       state.gameOver = true;
       roundResult.textContent =
   state.playerScore > state.computerScore
-    ? `You reached ${WINNING_SCORE} points! Yeay YOU WIN!`
+    ? `You reached ${WINNING_SCORE} points! 🏆 YOU WIN!`
     : `Computer reached ${WINNING_SCORE} points! Oh No, YOU LOSE!`;
     }
   }

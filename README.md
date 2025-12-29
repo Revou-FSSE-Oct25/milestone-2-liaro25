@@ -64,17 +64,18 @@ RevoFun is a playful landing page that links to three mini-games:
 
 ## 3. Technologies Used
 
-| Category               | Tools / Technologies | Description                                        |
-| ---------------------- | -------------------- | -------------------------------------------------- |
-| **Design**             | Figma                | Initial wireframes and UI planning                 |
-|                        | Canva                | Custom logo creation                               |
-| **Development**        | HTML5                | Page structure                                     |
-|                        | Tailwind CSS         | Styling (first Tailwind project)                   |
-|                        | JavaScript (Vanilla) | Game logic and interactions                        |
-|                        | GitHub Pages         | Deployment for the project                         |
-| **Learning Resources** | ChatGPT & Gemini     | Naming ideas, wording, and code review             |
-|                        | Sololearn            | Learning JavaScript fundamentals through exercises |
-|                        | YouTube Tutorials    | Step-by-step game-building guides                  |
+| Category               | Tools / Technologies | Description                                         |
+| ---------------------- | -------------------- | --------------------------------------------------- |
+| **Design**             | Figma                | Initial wireframes and UI planning                  |
+|                        | Canva                | Custom logo creation                                |
+| **Development**        | HTML5                | Page structure                                      |
+|                        | Tailwind CSS         | Styling (first Tailwind project)                    |
+|                        | JavaScript (Vanilla) | Game logic and interactions                         |
+|                        | GitHub Pages         | Deployment for the project                          |
+| **Validation & QA**    | W3C HTML Validator   | Checking HTML structure and tag correctness         |
+| **Learning Resources** | ChatGPT & Gemini     | Naming ideas, wording, refactoring, and code review |
+|                        | Sololearn            | Learning JavaScript fundamentals through exercises  |
+|                        | YouTube Tutorials    | Step-by-step game-building guides                   |
 
 ### Game Making Tutorials
 
@@ -150,10 +151,28 @@ milestone-2-liaro
 
 ## 6. Screenshot Journey
 
-## 7. Future Development Plans
+## 7. Improvements & Refactoring
+
+### Priority 1 — Bug Fix & Clean-up
+
+- Fixed unclosed HTML tags in mobile navigation to prevent DOM and layout issues.
+- Removed duplicated CSS class definitions for cleaner and more maintainable styles.
+
+### Priority 2 — Code Quality Improvements
+
+- Replaced magic numbers with named constants for better readability and scalability.
+- Replaced browser alert() with in-page custom UI feedback for a smoother user experience.
+
+### Priority 3 — Scalability & Future-proofing
+
+- Refactored the Memory Card game to generate cards dynamically using JavaScript instead of hardcoded HTML.
+- This allows easier changes to card count, themes, and difficulty levels in future updates.
+
+## 8. Future Development Plans
 
 - Add animations and sound effects to enhance gameplay
 - Add win sound effects across all games
 - Implement a Top 5 leaderboard with player names and scores
+- Add Easy and Hard option in Match!
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)

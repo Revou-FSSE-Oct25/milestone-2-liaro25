@@ -52,8 +52,8 @@
     if (!Number.isInteger(number)) {
       return { isValid: false, message: "Input should be a whole number!" };
     }
-    if (number < minNumber || number > maxNumber) {
-  return { isValid: false, message: `Input should be between ${minNumber}-${maxNumber}` };
+    if (number < MIN_NUMBER || number > MAX_NUMBER) {
+  return { isValid: false, message: `Input should be between ${MIN_NUMBER}-${MAX_NUMBER}` };
     }
     return { isValid: true, number };
   }
@@ -102,7 +102,7 @@
     if (won) {
       const attempts = MAX_ATTEMPTS - attemptsLeft;
       gameOverMessage.innerHTML = `
-        <h2 class="text-2xl font-bold text-green-600 mb-2">🏆 You Won!</h2>
+        <h2 class="text-2xl font-bold text-green-600 mb-2">🏆 YOU WIN!</h2>
         <p class="text-gray-700">You guessed <strong>${targetNumber}</strong> in <strong>${attempts}</strong> attempt${attempts === 1 ? "" : "s"}!</p>
       `;
     } else {
