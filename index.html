@@ -39,9 +39,9 @@
     class="min-h-screen flex flex-col bg-gradient-to-b from-rose-200 via-rose-100 to-orange-50"
   >
     <!-- NAVBAR -->
-    <header
-      class="py-4 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200 shadow-md w-full"
-    >
+    <header>
+      class="py-4 bg-gradient-to-r from-orange-50 via-rose-100 to-rose-200
+      shadow-md w-full" >
       <div
         class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center"
       >
@@ -55,7 +55,7 @@
           </h1>
         </div>
 
-<!-- Mobile hamburger button -->
+        <!-- Mobile hamburger button -->
         <button
           id="menuBtn"
           class="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-xl bg-white/70 hover:bg-white shadow-sm border border-orange-100 text-orange-700"
@@ -92,7 +92,9 @@
           <a href="guess.html" class="hover:text-orange-600 transition"
             >Guess!</a
           >
-          <a href="match.html" class="hover:text-orange-600 transition">Match!</a>
+          <a href="match.html" class="hover:text-orange-600 transition"
+            >Match!</a
+          >
         </nav>
       </div>
 
@@ -104,41 +106,48 @@
           <nav
             class="font-romaji flex flex-col gap-3 text-orange-700 text-base font-semibold"
           >
-            <a href="index.html" class="text-orange-900"
-              >Home</a
-            >
+            <a href="index.html" class="text-orange-900">Home</a>
             <a href="shoot.html" class="hover:text-orange-600 transition"
               >Shoot!</a
             >
             <a href="guess.html" class="hover:text-orange-600 transition"
               >Guess!</a
             >
-            <a href="match.html" class="hover:text-orange-600 transition">Match!</a>
+            <a href="match.html" class="hover:text-orange-600 transition"
+              >Match!</a
+            >
           </nav>
+        </div>
       </div>
     </header>
 
     <section class="text-center py-16">
-  <h1 class="font-romaji text-xl md:text-5xl font-bold text-rose-600">
-    RevoFun — Where Fun Is the Purpose
-  </h1>
+      <h2 class="font-romaji text-xl md:text-5xl font-bold text-rose-600">
+        RevoFun — Where Fun Is the Purpose
+      </h2>
 
-  <p class="font-romaji mt-4 mb-2 text-sm  md:text-xl text-teal-600 max-w-xl mx-auto">
-    Need easy-peasy games to ease your mind? <br>
-    Come here and play. <br>
-    Throw away your stress today!
-  </p>
-</section>
+      <p
+        class="font-romaji mt-4 mb-2 text-sm md:text-xl text-teal-600 max-w-xl mx-auto"
+      >
+        Need easy-peasy games to ease your mind? <br />
+        Come here and play. <br />
+        Throw away your stress today!
+      </p>
+    </section>
 
     <!-- MAIN CONTENT -->
-    <main class="max-w-5xl mx-auto mt-1  md:mt-10 mb-20 px-4">
+    <main class="max-w-5xl mx-auto mt-1 md:mt-10 mb-20 px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
         <!-- Shoot! -->
         <a
           href="shoot.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
         >
-          <img src="./assets/shoot.png" class="w-60 mx-auto mb-4" />
+          <img
+            src="./assets/shoot.png"
+            alt="Shoot! Game Logo"
+            class="w-60 mx-auto mb-4"
+          />
           <h2 class="font-romaji text-xl text-orange-700 font-bold">Shoot!</h2>
         </a>
 
@@ -147,7 +156,11 @@
           href="guess.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
         >
-          <img src="./assets/guess.png" class="w-60 mx-auto mb-4" />
+          <img
+            src="./assets/guess.png"
+            alt="Guess! Game Logo"
+            class="w-60 mx-auto mb-4"
+          />
           <h2 class="font-romaji text-xl text-orange-700 font-bold">Guess!</h2>
         </a>
 
@@ -156,7 +169,11 @@
           href="match.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
         >
-          <img src="./assets/match.png" class="w-60 mx-auto mb-4" />
+          <img
+            src="./assets/match.png"
+            alt="Match! Game Logo"
+            class="w-60 mx-auto mb-4"
+          />
           <h2 class="font-romaji text-xl text-orange-700 font-bold">Match!</h2>
         </a>
       </div>
