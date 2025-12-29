@@ -15,6 +15,7 @@
 
   // Initial Game State
   const state = { playerScore: 0, computerScore: 0, draw: 0, gameOver: false };
+  const WINNING_SCORE = 3; // First to 3 points wins
 
   // Randomly selects one choice (rock, paper, scissors) for the computer 
   function getComputerChoice() {
@@ -22,15 +23,7 @@
     return choices[Math.floor(Math.random() * choices.length)];
   }
 
-  // Converts choice value to emoji
-  /* Function prettifyChoice(choice) {
-    if (choice === "rock") return "✊";
-    if (choice === "paper") return "✋";
-    if (choice === "scissors") return "✌️";
-    return "-";
-  }*/
-
-  // Change above prettifyChoice function from looping multiple if else into switch-case
+  //Converts choice keyword to an emoji for display
     function prettifyChoice(choice) {
   switch (choice) {
     case "rock":
@@ -43,7 +36,6 @@
       return "-";
   }
 }
-
 
   // Determines the result of one round
   // Updates scores and returns the round winner
@@ -67,20 +59,20 @@
   }
 
   //Updates score display based on the latest game state
-  function updateLeaderboard() {
+  function updateScoreboard() {
     playerScoreSpan.textContent = state.playerScore;
     computerScoreSpan.textContent = state.computerScore;
     drawSpan.textContent = state.draw;
   }
 
-  //// Checks if player or computer reached the winning score and ends the game
+  // Checks if either player reaches the winning score and ends the game
   function checkGameOver() {
-    if (state.playerScore >= 3 || state.computerScore >= 3) {
+    if (state.playerScore >= WINNING_SCORE || state.computerScore >= WINNING_SCORE) {
       state.gameOver = true;
       roundResult.textContent =
-        state.playerScore > state.computerScore
-          ? "You reached 3 points! Yeay YOU WIN!"
-          : "Computer reached 3 points! Oh No, YOU LOSE!";
+  state.playerScore > state.computerScore
+    ? `You reached ${WINNING_SCORE} points! Yeay YOU WIN!`
+    : `Computer reached ${WINNING_SCORE} points! Oh No, YOU LOSE!`;
     }
   }
   
@@ -103,7 +95,7 @@
     roundResult.textContent =
       winner === "draw" ? "It's a draw!" : winner === "player" ? "You win!" : "Computer wins!";
 
-    updateLeaderboard();
+    updateScoreboard();
     checkGameOver();
   }
 
@@ -118,12 +110,12 @@
     computerChoiceSpan.textContent = "-";
     roundResult.textContent = "Let’s play! Make your first move.";
 
-    updateLeaderboard();
+    updateScoreboard();
   }
 
   //Run the game when the player clicks a button
 
   choiceButtons.forEach((btn) => btn.addEventListener("click", handlePlayerChoice));
   resetButton.addEventListener("click", resetGame);
-  updateLeaderboard();
+  updateScoreboard();
 })();
