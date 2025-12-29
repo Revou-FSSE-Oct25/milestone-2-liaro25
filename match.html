@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Play Rock Paper Scissors (Shoot!) on RevoFun and practice your logic while having fun."
+      content="Play Match! Memory Card on RevoFun. Memorize the emoticons and match each pair correctly."
     />
     <meta name="author" content="Lia Rosliany" />
     <title>RevoFun | Match! Memory Card Matching Games</title>
@@ -26,7 +26,6 @@
       .font-romaji {
         font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
       }
-    </style>
 
       /* ===== MEMORY CARD FLIP ===== */
       .memory-card {
@@ -212,152 +211,29 @@
         </div>
       </section>
 
-<section class="mt-4">
-  <p
-    class="font-romaji text-sm md:text-xl text-green-600 text-center"
-  >
-    Let’s play!<br />
-    Memorize the emoticons and match each pair correctly.
-  </p>
-</section>
+      <!-- WIN MESSAGE (outside the 3-col grid) -->
+      <div
+        id="winMessage"
+        class="hidden mt-2 p-4 font-romaji rounded-lg bg-green-100 text-green-800 text-center max-w-md leading-loose sm:max-w-lg lg:max-w-xl mx-auto"
+      ></div>
 
-<!-- MEMORY CARD GRID -->
-<section
-  class="mt-8 px-2 sm:px-4 max-w-md sm:max-w-lg lg:max-w-xl mx-auto overflow-x-auto"
-  aria-label="Memory card grid"
->
-  <div
-    class="grid grid-cols-4
-           gap-2 sm:gap-4
-           min-w-[420px] sm:min-w-0"
-  >
-    <!-- CARD 1 -->
-    <div class="memory-card" data-card="🍎">
-      <div class="card-inner">
-        <div class="card-front text-3xl sm:text-5xl">🍎</div>
-        <div class="card-back text-2xl sm:text-4xl">🍄</div>
-      </div>
-    </div>
+      <!-- INSTRUCTION -->
+      <section class="mt-4">
+        <p class="font-romaji text-sm md:text-xl text-green-600 text-center">
+          Let’s play!<br />
+          Memorize the emoticons and match each pair correctly.
+        </p>
+      </section>
 
-    <!-- CARD 2 -->
-    <div class="memory-card" data-card="🍎">
-      <div class="card-inner">
-        <div class="card-front text-3xl sm:text-5xl">🍎</div>
-        <div class="card-back text-2xl sm:text-4xl">🍄</div>
-      </div>
-    </div>
-
-    <!-- CARD 3 -->
-    <div class="memory-card" data-card="🍌">
-      <div class="card-inner">
-        <div class="card-front text-3xl sm:text-5xl">🍌</div>
-        <div class="card-back text-2xl sm:text-4xl">🍄</div>
-      </div>
-    </div>
-
-    <!-- CARD 4 -->
-    <div class="memory-card" data-card="🍌">
-      <div class="card-inner">
-        <div class="card-front text-3xl sm:text-5xl">🍌</div>
-        <div class="card-back text-2xl sm:text-4xl">🍄</div>
-      </div>
-    </div>
-
-        <!-- CARD 5 -->
-        <div class="memory-card" data-card="🍇">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍇</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 6 -->
-        <div class="memory-card" data-card="🍇">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍇</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 7 -->
-        <div class="memory-card" data-card="🍓">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍓</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 8 -->
-        <div class="memory-card" data-card="🍓">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍓</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 9 -->
-        <div class="memory-card" data-card="🥐">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🥐</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 10 -->
-        <div class="memory-card" data-card="🥐">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🥐</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 11 -->
-        <div class="memory-card" data-card="🍩">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍩</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 12 -->
-        <div class="memory-card" data-card="🍩">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍩</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 13 -->
-        <div class="memory-card" data-card="🍕">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍕</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 14 -->
-        <div class="memory-card" data-card="🍕">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍕</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 15 -->
-        <div class="memory-card" data-card="🍔">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍔</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
-
-        <!-- CARD 16 -->
-        <div class="memory-card" data-card="🍔">
-          <div class="card-inner">
-            <div class="card-front text-3xl sm:text-5xl">🍔</div>
-            <div class="card-back text-2xl sm:text-4xl">🍄</div>
-          </div>
-        </div>
+      <!-- MEMORY CARD GRID -->
+      <section
+        class="mt-8 px-2 sm:px-4 max-w-md sm:max-w-lg lg:max-w-xl mx-auto overflow-x-auto"
+        aria-label="Memory card grid"
+      >
+        <div
+          id="cardGrid"
+          class="grid grid-cols-4 gap-2 sm:gap-4 min-w-[420px] sm:min-w-0"
+        ></div>
       </section>
 
       <!-- RESET BUTTON -->
