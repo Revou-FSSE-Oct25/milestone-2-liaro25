@@ -14,6 +14,9 @@
   const resetBtnGuess = document.getElementById("resetBtn");
   const previousGuessesList = document.getElementById("guessList");
   const previousGuessesContainer = document.getElementById("previousGuesses");
+  const minNumber= 1;
+  const maxNumber = 100;
+  const maxAttempts = 10;
 
 // Game Variables
   let targetNumber;
@@ -23,8 +26,8 @@
 
 // Initial state, generate random number from 1-100 with 10 attempts 
   function initGame() {
-    targetNumber = Math.floor(Math.random() * 100) + 1;
-    attemptsLeft = 10;
+    targetNumber = Math.floor(Math.random() * maxNumber) + minNumber;
+    attemptsLeft = maxAttempts;
     gameActive = true;
     previousGuesses = [];
 
@@ -48,8 +51,8 @@
     if (!Number.isInteger(number)) {
       return { isValid: false, message: "Input should be a whole number!" };
     }
-    if (number < 1 || number > 100) {
-      return { isValid: false, message: "Input should be between 1-100" };
+    if (number < minNumber || number > maxNumber) {
+  return { isValid: false, message: `Input should be between ${minNumber}-${maxNumber}` };
     }
     return { isValid: true, number };
   }
@@ -96,7 +99,7 @@
     gameOverContainer.classList.remove("hidden");
 
     if (won) {
-      const attempts = 10 - attemptsLeft;
+      const attempts = maxAttempts - attemptsLeft;
       gameOverMessage.innerHTML = `
         <h2 class="text-2xl font-bold text-green-600 mb-2">🏆 You Won!</h2>
         <p class="text-gray-700">You guessed <strong>${targetNumber}</strong> in <strong>${attempts}</strong> attempt${attempts === 1 ? "" : "s"}!</p>
@@ -129,7 +132,7 @@
       return;
     }
 
-    showFeedback(guess > targetNumber ? "Too high" : "Too low", guess > targetNumber ? "high" : "low");
+    showFeedback(guess > targetNumber ? "Too high!" : "Too low!", guess > targetNumber ? "high" : "low");
     guessInput.value = "";
     guessInput.focus();
   }

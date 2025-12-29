@@ -14,16 +14,16 @@
   const resetButton = document.getElementById("reset-game");
 
   // Initial Game State
-  const state = { playerScore: 0, computerScore: 0, draw: 0, gameOver: false };
   const WINNING_SCORE = 3; // First to 3 points wins
-
+  const state = { playerScore: 0, computerScore: 0, draw: 0, gameOver: false };
+  
   // Randomly selects one choice (rock, paper, scissors) for the computer 
   function getComputerChoice() {
     const choices = ["rock", "paper", "scissors"];
     return choices[Math.floor(Math.random() * choices.length)];
   }
 
-  //Converts choice keyword to an emoji for display
+  // Converts choice keyword to an emoji for display
     function prettifyChoice(choice) {
   switch (choice) {
     case "rock":
@@ -58,7 +58,7 @@
     }
   }
 
-  //Updates score display based on the latest game state
+  // Updates score display based on the latest game state
   function updateScoreboard() {
     playerScoreSpan.textContent = state.playerScore;
     computerScoreSpan.textContent = state.computerScore;
@@ -76,8 +76,8 @@
     }
   }
   
- // Handles user interaction when a choice button is clicked
- // When player clicks a choice, play one round and show the result
+  // Handles user interaction when a choice button is clicked
+  // When player clicks a choice, play one round and show the result
   function handlePlayerChoice(event) {
     if (state.gameOver) {
       roundResult.textContent = "Game is over. Press Reset Game to play again!";
@@ -99,7 +99,7 @@
     checkGameOver();
   }
 
-  //Allows the player to start a new game
+  // Allows the player to start a new game
   function resetGame() {
     state.playerScore = 0;
     state.computerScore = 0;
@@ -113,7 +113,7 @@
     updateScoreboard();
   }
 
-  //Run the game when the player clicks a button
+  // Run the game when the player clicks a button
 
   choiceButtons.forEach((btn) => btn.addEventListener("click", handlePlayerChoice));
   resetButton.addEventListener("click", resetGame);
