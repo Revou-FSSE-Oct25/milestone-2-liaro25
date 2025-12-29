@@ -11,6 +11,10 @@
   const resetBtnMatch = document.getElementById("resetBtn");
   const totalCards = cards.length;
   const totalPairs = Math.floor(totalCards / 2);
+  const TIMER_INTERVAL_MS = 1000;
+  const MATCH_WIN_DELAY_MS = 250;
+  const FLIP_BACK_DELAY_MS = 800;
+
 
 // Game Variables
   let firstCard = null;
@@ -29,7 +33,7 @@
       const min = Math.floor(seconds / 60); //converting from seconds to minutes
       const sec = seconds % 60;
       timeDisplayEl.textContent = `${min}:${sec.toString().padStart(2, "0")}`;
-    }, 1000);
+    }, TIMER_INTERVAL_MS);
   }
 
 // Stop the time when player finished the game or when game being reset
@@ -70,7 +74,7 @@
       stopTimer();
       setTimeout(() => {
         alert(`🎉 You won!\nMoves: ${moves}\nTime: ${timeDisplayEl.textContent}`);
-      }, 250);
+      }, MATCH_WIN_DELAY_MS);
     }
   }
 
@@ -80,7 +84,7 @@
       firstCard.classList.remove("flip");
       secondCard.classList.remove("flip");
       resetBoard();
-    }, 800);
+    }, FLIP_BACK_DELAY_MS);
   }
 
 //// Handle card click events, manage flipped cards, and update move count  

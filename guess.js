@@ -14,9 +14,10 @@
   const resetBtnGuess = document.getElementById("resetBtn");
   const previousGuessesList = document.getElementById("guessList");
   const previousGuessesContainer = document.getElementById("previousGuesses");
-  const minNumber= 1;
-  const maxNumber = 100;
-  const maxAttempts = 10;
+  const MIN_NUMBER = 1;
+  const MAX_NUMBER = 100;
+  const MAX_ATTEMPTS = 10;
+
 
 // Game Variables
   let targetNumber;
@@ -26,8 +27,8 @@
 
 // Initial state, generate random number from 1-100 with 10 attempts 
   function initGame() {
-    targetNumber = Math.floor(Math.random() * maxNumber) + minNumber;
-    attemptsLeft = maxAttempts;
+    targetNumber = Math.floor(Math.random() * MAX_NUMBER) + MIN_NUMBER;
+    attemptsLeft = MAX_ATTEMPTS;
     gameActive = true;
     previousGuesses = [];
 
@@ -99,7 +100,7 @@
     gameOverContainer.classList.remove("hidden");
 
     if (won) {
-      const attempts = maxAttempts - attemptsLeft;
+      const attempts = MAX_ATTEMPTS - attemptsLeft;
       gameOverMessage.innerHTML = `
         <h2 class="text-2xl font-bold text-green-600 mb-2">🏆 You Won!</h2>
         <p class="text-gray-700">You guessed <strong>${targetNumber}</strong> in <strong>${attempts}</strong> attempt${attempts === 1 ? "" : "s"}!</p>
