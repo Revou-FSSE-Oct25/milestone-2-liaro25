@@ -177,8 +177,8 @@ The library ensures reliable cross-browser and mobile audio playback, improving 
 
 ## 8. Future Development Plans
 
-- Add animations and sound effects to enhance gameplay
-- Implement a Top 5 leaderboard with player names and scores
-- Add Easy and Hard option in Match!
+- Add animations to enhance gameplay
+- Implement a Top 5 leaderboard with player names and scores (using localStorage)
+- Add Easy, Medium and Hard option in Match!
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)

@@ -33,6 +33,27 @@
         font-family: "Mochiy Pop One", "Quicksand", Arial, sans-serif;
       }
     </style>
+
+    <!-- Wobble effect for Play button -->
+      <style>
+
+    @keyframes wobble {
+      0%   { transform: rotate(0deg); }
+      15%  { transform: rotate(-2deg); }
+      30%  { transform: rotate(2deg); }
+      45%  { transform: rotate(-2deg); }
+      60%  { transform: rotate(2deg); }
+      75%  { transform: rotate(-1deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .play-btn:hover,
+    .play-btn:focus-visible,
+    .play-btn.is-selected {
+      animation: wobble 0.45s ease-in-out;
+    }
+  </style>
+
   </head>
 
   <body
@@ -139,34 +160,82 @@
     <!-- MAIN CONTENT -->
     <main class="max-w-5xl mx-auto mt-1 md:mt-10 mb-20 px-4">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        
         <!-- Shoot! -->
-        <a
-          href="shoot.html"
-          class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
+      <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center">
+      <img
+        src="assets/shoot.png"
+        alt="Rock Paper Scissors Game Logo"
+        class="w-48 h-48 object-contain"
+      />
+
+      <p class="font-romaji mt-4 text-xl font-bold text-orange-600 mb-4">
+      Shoot!
+      </p>
+
+      <a
+        href="shoot.html"
+        class="play-btn font-romaji inline-flex items-center justify-center
+           px-6 py-2 rounded-xl font-bold
+           bg-rose-500 text-white
+           shadow-md
+           focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-300"
         >
-          <img
-            src="./assets/shoot.png"
-            alt="Shoot! Game Logo"
-            class="w-60 mx-auto mb-4"
-          />
-          <h2 class="font-romaji text-xl text-orange-700 font-bold">Shoot!</h2>
+        ▶ Play
         </a>
+        </div>
         
 
         <!-- Guess! -->
+
+        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center">
+        <img
+        src="assets/guess.png"
+        alt="Guess! Game Logo"
+        class="w-48 h-48 object-contain"
+        />
+
+        <p class="font-romaji mt-4 text-xl font-bold text-orange-600 mb-4">
+        Guess!
+        </p>
+ 
         <a
-          href="guess.html"
-          class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
+        href="guess.html"
+        class="play-btn font-romaji inline-flex items-center justify-center
+               px-6 py-2 rounded-xl font-bold
+               bg-rose-500 text-white
+               shadow-md
+               focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-300"
         >
-          <img
-            src="./assets/guess.png"
-            alt="Guess! Game Logo"
-            class="w-60 mx-auto mb-4"
-          />
-          <h2 class="font-romaji text-xl text-orange-700 font-bold">Guess!</h2>
+        ▶ Play
         </a>
+      </div>
+
 
         <!-- Match! -->
+        <div class="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center">
+        <img
+        src="assets/match.png"
+        alt="Match! Game Logo"
+        class="w-48 h-48 object-contain"
+        />
+
+        <p class="font-romaji mt-4 text-xl font-bold text-orange-600 mb-4">
+        Match!
+        </p>
+ 
+        <a
+        href="match.html"
+        class="play-btn font-romaji inline-flex items-center justify-center
+               px-6 py-2 rounded-xl font-bold
+               bg-rose-500 text-white
+               shadow-md
+               focus:outline-none focus-visible:ring-4 focus-visible:ring-rose-300"
+        >
+        ▶ Play
+        </a>
+        </div>
+        <!--
         <a
           href="match.html"
           class="bg-white rounded-xl shadow hover:shadow-lg transition p-6 text-center"
@@ -178,7 +247,9 @@
           />
           <h2 class="font-romaji text-xl text-orange-700 font-bold">Match!</h2>
         </a>
-      </div>
+      </div>-->
+
+
     </main>
 
     <!-- FOOTER -->
