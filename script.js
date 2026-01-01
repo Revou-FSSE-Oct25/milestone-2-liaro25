@@ -34,10 +34,10 @@
   if (window.SoundManager) return;
 
   const sfx = {
-    click: new Howl({ src: ["/assets/click.wav"], volume: 0.6 }),
-    win: new Howl({ src: ["/assets/win.mp3"], volume: 0.6 }),
-    lose: new Howl({ src: ["/assets/lose.mp3"], volume: 0.6 }),
-    flip: new Howl({ src: ["/assets/flip.mp3"], volume: 0.6 }),
+    click: new Howl({ src: [assetUrl("/assets/click.wav")], volume: 0.6 }),
+    win: new Howl({ src: [assetUrl("/assets/win.mp3")], volume: 0.6 }),
+    lose: new Howl({ src: [assetUrl("/assets/lose.mp3")], volume: 0.6 }),
+    flip: new Howl({ src: [assetUrl("/assets/flip.mp3")], volume: 0.6 }),
   };
 
   let muted = false;
