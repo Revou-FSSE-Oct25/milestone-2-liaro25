@@ -82,6 +82,7 @@ RevoFun is a playful landing page that links to three mini-games:
 - Web Development Tutorial - JavaScript, HTML, CSS - Rock Paper Scissors Game - https://www.youtube.com/watch?v=jaVNP3nIAv0
 - Build Memory Game Project | HTML CSS JavaScript Fun Game for Beginners 2025 - https://www.youtube.com/watch?v=rcWBLFXH7uA
 - Guess the Number Game Project | Revou Interactive Demo Session Week 7 Guess the Number github repository.
+- Add a Sound Effect After Clicking on Buttons | HTML | CSS | JavaScript - https://youtu.be/C6G3ZERMi08?si=EpZXdnkAF7ma3wgp
 
 ---
 
@@ -130,26 +131,55 @@ Display win message</p>
 ## 5. Folder Structure
 
 ```
-milestone-2-liaro
+milestone-2-liaro25
 ├── assets
-│   ├── backgroundHero.png
 │   ├── figma.png
 │   ├── guess.png
 │   ├── logo.png
 │   ├── match.png
 │   └── shoot.png
 ├── guess.html
-├── guess.js
 ├── index.html
+├── js
+│   ├── guess.js
+│   ├── howler.min.js
+│   ├── match.js
+│   ├── script.js
+│   └── shoot.js
 ├── match.html
-├── match.js
 ├── README.md
-├── script.js
 ├── shoot.html
-└── shoot.js
+└── sounds
+    ├── click.wav
+    ├── flip.mp3
+    ├── lose.mp3
+    └── win.mp3
 ```
 
 ## 6. Screenshot Journey
+
+This section documents the development journey of RevoFun, from initial ideas to implementation and testing.
+
+1. **Raw imagination & planning**  
+   Started by writing down raw ideas and rough concepts before any coding, including simple notes and pseudocode to clarify game logic and flow. Can be seen in _4. Pseudocode and FlowChart for each games_
+
+2. **UI exploration & visual direction**  
+   Designed early UI concepts in Figma to explore layout, colors, and overall feel of the games.  
+   Created a simple logo and visual assets using Canva to establish a playful and consistent look.
+
+   ![Screenshot Journey – Figma](assets/figma.png)
+
+3. **Implementation & experimentation**  
+   Built each game page using JavaScript, learning through a combination of tutorials, documentation, AI assistance, and hands-on experimentation in VS Code. Can be seen in _Game Making Tutorials_
+   Actively tested understanding by removing or modifying code blocks to observe their effects and better grasp how each part works.
+
+4. **User testing & feedback**  
+   Conducted informal user testing sessions, gathering feedback, critiques, and suggestions to improve usability and overall experience.
+
+5. **Debugging & validation**  
+   Verified the project in the browser at _W3C HTML Validator_ and development tools to identify potential issues such as missing brackets, logic errors, or console warnings, ensuring each file runs correctly and consistently.
+
+   ![Screenshot Journey – W3C](assets/w3cvalidator.png)
 
 ## 7. Improvements & Refactoring
 
@@ -172,6 +202,7 @@ milestone-2-liaro
 
 RevoFun uses **Howler.js** as a global sound manager to handle audio feedback consistently across all mini-games, including win, lose, button click, and card flip sounds.  
 The library ensures reliable cross-browser and mobile audio playback, improving user experience across devices.
+To support iOS devices, audio playback is unlocked through an initial user interaction (tap/click), complying with iOS Safari’s autoplay restrictions and ensuring sound works properly on iPhone and iPad.
 
 > Audio handled using Howler.js (https://github.com/goldfire/howler.js)
 
@@ -180,5 +211,6 @@ The library ensures reliable cross-browser and mobile audio playback, improving 
 - Add animations to enhance gameplay
 - Implement a Top 5 leaderboard with player names and scores (using localStorage)
 - Add Easy, Medium and Hard option in Match!
+- Implement bilingual (English / Japanese) game interfaces to allow the games to be played by both international users and Japanese children.
 
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/PAiQDgnZ)
