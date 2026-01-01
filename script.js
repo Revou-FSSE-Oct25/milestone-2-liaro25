@@ -80,3 +80,18 @@
     isMuted,
   };
 })();
+
+(function unlockIOSAudio() {
+  const unlock = () => {
+    if (window.Howler) {
+      Howler.ctx.resume?.();
+      Howler.autoUnlock = true;
+    }
+
+    document.removeEventListener("touchstart", unlock);
+    document.removeEventListener("click", unlock);
+  };
+
+  document.addEventListener("touchstart", unlock, { once: true });
+  document.addEventListener("click", unlock, { once: true });
+})();
