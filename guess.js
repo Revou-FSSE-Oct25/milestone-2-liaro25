@@ -140,6 +140,7 @@
 
 // Handler when user click submit
   function handleSubmit() {
+    SoundManager?.play("click");
     if (!gameActive) return;
 
     const validation = validateInput(guessInput.value);

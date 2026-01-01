@@ -108,6 +108,7 @@ function renderCards() {
   if (matches === TOTAL_PAIRS) {
     stopTimer();
     lockBoard = true; // lock only when game finished
+    SoundManager?.play("win");
     setTimeout(showWinMessage, MATCH_WIN_DELAY_MS);
     return;
   }
@@ -131,6 +132,7 @@ function renderCards() {
 
     startTimer();
     this.classList.add("flip");
+    SoundManager?.play("flip");
 
     if (!firstCard) {
       firstCard = this;
@@ -150,6 +152,7 @@ function renderCards() {
 
 // Fully reset game state, timer, and card interactions
   function resetGame() {
+  SoundManager?.play("click");
   stopTimer();
   moves = 0;
   matches = 0;
