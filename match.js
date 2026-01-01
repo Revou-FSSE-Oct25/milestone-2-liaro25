@@ -46,7 +46,7 @@
 
 function showWinMessage() {
   winMessageEl.innerHTML = `
-    <strong>YOU WIN!</strong><br>
+    <strong>🏆 YOU WIN!</strong><br>
     Moves: ${moves}<br>
     Time: ${timeDisplayEl.textContent}
   `;

@@ -24,18 +24,18 @@
   }
 
   // Converts choice keyword to an emoji for display
-    function prettifyChoice(choice) {
-  switch (choice) {
-    case "rock":
-      return "✊";
-    case "paper":
-      return "✋";
-    case "scissors":
-      return "✌️";
-    default:
-      return "-";
+  function prettifyChoice(choice) {
+    switch (choice) {
+      case "rock":
+        return "✊";
+      case "paper":
+        return "✋";
+      case "scissors":
+        return "✌️";
+      default:
+        return "-";
+    }
   }
-}
 
   // Determines the result of one round
   // Updates scores and returns the round winner
@@ -69,12 +69,14 @@
   function checkGameOver() {
     if (state.playerScore >= WINNING_SCORE || state.computerScore >= WINNING_SCORE) {
       state.gameOver = true;
+      SoundManager?.play(state.playerScore > state.computerScore ? "win" : "lose");
       roundResult.textContent =
   state.playerScore > state.computerScore
     ? `You reached ${WINNING_SCORE} points! 🏆 YOU WIN!`
     : `Computer reached ${WINNING_SCORE} points! Oh No, YOU LOSE!`;
     }
   }
+  
   
   // Handles user interaction when a choice button is clicked
   // When player clicks a choice, play one round and show the result
@@ -83,6 +85,7 @@
       roundResult.textContent = "Game is over. Press Reset Game to play again!";
       return;
     }
+    SoundManager?.play("click");
 
     const playerChoice = event.currentTarget.dataset.choice;
     const computerChoice = getComputerChoice();
@@ -91,6 +94,9 @@
     computerChoiceSpan.textContent = prettifyChoice(computerChoice);
 
     const winner = playRound(playerChoice, computerChoice);
+
+    if (winner === "player") SoundManager?.play("win");
+    if (winner === "computer") SoundManager?.play("lose");
 
     roundResult.textContent =
       winner === "draw" ? "It's a draw!" : winner === "player" ? "You win!" : "Computer wins!";
@@ -101,6 +107,7 @@
 
   // Allows the player to start a new game
   function resetGame() {
+    SoundManager?.play("click");
     state.playerScore = 0;
     state.computerScore = 0;
     state.draw = 0;

@@ -168,10 +168,16 @@ milestone-2-liaro
 - Refactored the Memory Card game to generate cards dynamically using JavaScript instead of hardcoded HTML.
 - This allows easier changes to card count, themes, and difficulty levels in future updates.
 
+### Priority 4 – Sound Effects
+
+RevoFun uses **Howler.js** as a global sound manager to handle audio feedback consistently across all mini-games, including win, lose, button click, and card flip sounds.  
+The library ensures reliable cross-browser and mobile audio playback, improving user experience across devices.
+
+> Audio handled using Howler.js (https://github.com/goldfire/howler.js)
+
 ## 8. Future Development Plans
 
 - Add animations and sound effects to enhance gameplay
-- Add win sound effects across all games
 - Implement a Top 5 leaderboard with player names and scores
 - Add Easy and Hard option in Match!
 
